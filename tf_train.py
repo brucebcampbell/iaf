@@ -130,8 +130,11 @@ class CVAE1(object):
         opt = AdamaxOptimizer(hps.learning_rate)
 
         num_pixels = 3 * hps.image_size * hps.image_size
+        r =range(hps.num_gpus)
+        print("DEBUG NUM GPU = "+ str(hps.num_gpus) )
         for i in range(hps.num_gpus):
             with tf.device(assign_to_gpu(i)):
+                print("DEBUG FORWARD = " + str(i) )
                 m, obj, loss = self._forward(xs[i], i)
                 losses += [loss]
                 self.m_trunc += [m]

@@ -35,7 +35,8 @@ def unpickle(file):
 
 
 def load(data_dir, subset='train'):
-    maybe_download_and_extract(data_dir)
+    #This should only be run once - otherwise we dl each time  bbcrevisit
+    #maybe_download_and_extract(data_dir)
     if subset == 'train':
         train_data = [unpickle(os.path.join(data_dir,'cifar-10-batches-py/data_batch_' + str(i))) for i in range(1,6)]
         trainx = np.concatenate([d['x'] for d in train_data],axis=0)

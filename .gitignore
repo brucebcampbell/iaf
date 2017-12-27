@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# knitr and R markdown default cache directories
+cifar-10/
+
 # Distribution / packaging
 .Python
 env/
