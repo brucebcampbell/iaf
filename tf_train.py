@@ -123,7 +123,10 @@ class CVAE1(object):
 
         losses = []
         grads = []
-        xs = tf.split(0, hps.num_gpus, self.x)
+
+        #This api is changed - see https://stackoverflow.com/questions/41842440/tensorflow-input-split-dim-of-split-op-has-type-float32-that-does-not-matc
+        #xs = tf.split(0, hps.num_gpus, self.x)
+        xs = tf.split( self.x, hps.num_gpus,0)
         opt = AdamaxOptimizer(hps.learning_rate)
 
         num_pixels = 3 * hps.image_size * hps.image_size
