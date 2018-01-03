@@ -229,7 +229,7 @@ def run(hps):
     with tf.variable_scope("model") as vs:
         x = get_inputs(hps.dataset, "train", hps.batch_size * FLAGS.num_gpus, hps.image_size)
 
-        hps.num_gpus = 1
+        #hps.num_gpus = 1
         init_x = x[:hps.batch_size, :, :, :]
         init_model = CVAE1(hps, "init", init_x)
 

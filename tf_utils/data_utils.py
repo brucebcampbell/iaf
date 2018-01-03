@@ -45,7 +45,8 @@ class CIFAR(object):
 def get_images(dataset, mode, image_size, deterministic=False):
     if dataset == "cifar10":
         #path = os.environ['CIFAR10_PATH']
-        path = "cifar-10"
+        path = "C:/E/brucebcampbell-git/iaf/cifar-10"
+        print("DEBUB cifar-10 path =" + path)
         cifar = CIFAR(path, deterministic)
         if mode == "train":
             return cifar.train
