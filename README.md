@@ -1,4 +1,7 @@
+
 # Improve Variational Inference with Inverse Autoregressive Flow
+
+Forked to get the TF workflow running on AWS DLAMIs
 
 Code for reproducing key results in the paper [Improving Variational Inference with Inverse Autoregressive Flow](http://arxiv.org/abs/1606.04934) by Diederik P. Kingma, Tim Salimans and Max Welling.
 
